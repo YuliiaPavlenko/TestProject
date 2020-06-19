@@ -96,10 +96,14 @@
 			isa = PBXGroup;
 			children = (
 				AF9DF8B1249CF2ED003E116F /* AppDelegate.swift */,
-				AF9DF8B7249CF2ED003E116F /* Main.storyboard */,
-				AF9DF8BA249CF2F2003E116F /* Assets.xcassets */,
 				AF9DF8BC249CF2F2003E116F /* LaunchScreen.storyboard */,
-				AF9DF8BF249CF2F2003E116F /* Info.plist */,
+				AF9DF8E3249CFC0C003E116F /* Constants */,
+				AF9DF8E6249CFD57003E116F /* Controllers */,
+				AF9DF8E2249CFC00003E116F /* Extensions */,
+				AF9DF8E7249CFD9A003E116F /* Networking */,
+				AF9DF8E1249CFB90003E116F /* Resources */,
+				AF9DF8EA249CFDCA003E116F /* ViewModels */,
+				AF9DF8EB249CFDD5003E116F /* Views */,
 			);
 			path = TestProject;
 			sourceTree = "<group>";
@@ -120,6 +124,74 @@
 				AF9DF8D5249CF2F2003E116F /* Info.plist */,
 			);
 			path = TestProjectUITests;
+			sourceTree = "<group>";
+		};
+		AF9DF8E1249CFB90003E116F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF9DF8BA249CF2F2003E116F /* Assets.xcassets */,
+				AF9DF8BF249CF2F2003E116F /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF9DF8E2249CFC00003E116F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF9DF8E3249CFC0C003E116F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AF9DF8E6249CFD57003E116F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AF9DF8E7249CFD9A003E116F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AF9DF8E8249CFDA3003E116F /* Error */,
+				AF9DF8E9249CFDA9003E116F /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AF9DF8E8249CFDA3003E116F /* Error */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		AF9DF8E9249CFDA9003E116F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF9DF8EA249CFDCA003E116F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AF9DF8EB249CFDD5003E116F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF9DF8B7249CF2ED003E116F /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestProject/Info.plist;
+				INFOPLIST_FILE = TestProject/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestProject/Info.plist;
+				INFOPLIST_FILE = TestProject/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
