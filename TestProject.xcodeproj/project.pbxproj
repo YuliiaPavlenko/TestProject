@@ -18,6 +18,7 @@
 		AF9DF8F1249D1867003E116F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8F0249D1867003E116F /* NetworkManager.swift */; };
 		AF9DF8F3249D1F88003E116F /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8F2249D1F88003E116F /* Company.swift */; };
 		AF9DF8F5249D1F94003E116F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8F4249D1F94003E116F /* Address.swift */; };
+		AF9DF8F7249D26BF003E116F /* CompanyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8F6249D26BF003E116F /* CompanyRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		AF9DF8F0249D1867003E116F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AF9DF8F2249D1F88003E116F /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		AF9DF8F4249D1F94003E116F /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		AF9DF8F6249D26BF003E116F /* CompanyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				AF9DF8EE249D174D003E116F /* HTTPURLResponse.swift */,
 				AF9DF8F0249D1867003E116F /* NetworkManager.swift */,
+				AF9DF8F6249D26BF003E116F /* CompanyRequest.swift */,
 				AF9DF8E8249CFDA3003E116F /* Error */,
 				AF9DF8E9249CFDA9003E116F /* Models */,
 			);
@@ -342,6 +345,7 @@
 			files = (
 				AF9DF8F5249D1F94003E116F /* Address.swift in Sources */,
 				AF9DF8F1249D1867003E116F /* NetworkManager.swift in Sources */,
+				AF9DF8F7249D26BF003E116F /* CompanyRequest.swift in Sources */,
 				AF9DF8B2249CF2ED003E116F /* AppDelegate.swift in Sources */,
 				AF9DF8ED249D1678003E116F /* DataResponseError.swift in Sources */,
 				AF9DF8F3249D1F88003E116F /* Company.swift in Sources */,
