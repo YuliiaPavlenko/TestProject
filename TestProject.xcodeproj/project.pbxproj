@@ -13,6 +13,8 @@
 		AF9DF8BE249CF2F2003E116F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9DF8BC249CF2F2003E116F /* LaunchScreen.storyboard */; };
 		AF9DF8C9249CF2F2003E116F /* TestProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8C8249CF2F2003E116F /* TestProjectTests.swift */; };
 		AF9DF8D4249CF2F2003E116F /* TestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8D3249CF2F2003E116F /* TestProjectUITests.swift */; };
+		AF9DF8ED249D1678003E116F /* DataResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8EC249D1678003E116F /* DataResponseError.swift */; };
+		AF9DF8EF249D174D003E116F /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8EE249D174D003E116F /* HTTPURLResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		AF9DF8CF249CF2F2003E116F /* TestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9DF8D3249CF2F2003E116F /* TestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectUITests.swift; sourceTree = "<group>"; };
 		AF9DF8D5249CF2F2003E116F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF9DF8EC249D1678003E116F /* DataResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseError.swift; sourceTree = "<group>"; };
+		AF9DF8EE249D174D003E116F /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		AF9DF8E7249CFD9A003E116F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				AF9DF8EE249D174D003E116F /* HTTPURLResponse.swift */,
 				AF9DF8E8249CFDA3003E116F /* Error */,
 				AF9DF8E9249CFDA9003E116F /* Models */,
 			);
@@ -168,6 +173,7 @@
 		AF9DF8E8249CFDA3003E116F /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				AF9DF8EC249D1678003E116F /* DataResponseError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -326,6 +332,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9DF8B2249CF2ED003E116F /* AppDelegate.swift in Sources */,
+				AF9DF8ED249D1678003E116F /* DataResponseError.swift in Sources */,
+				AF9DF8EF249D174D003E116F /* HTTPURLResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
