@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CompanyTableViewCell: UITableViewCell {
     
@@ -20,17 +21,21 @@ class CompanyTableViewCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-      super.awakeFromNib()
-      
-      companyImageView.layer.cornerRadius = 6
-        companyNameLabel.textColor = .lightText
-      
+        super.awakeFromNib()
+        companyNameLabel.textColor = .darkText
     }
     
     func configure(with company: Company?) {
       if let company = company {
         companyNameLabel?.text = company.name
-        companyImageView?.image = UIImage(named: company.coverImage ?? "noImageIcon")
+        
+        if let coverImage = company.coverImage {
+            let fixedCoverImageName = coverImage.replacingOccurrences(of: "i.", with: "")
+            let url = URL(string: fixedCoverImageName)
+            companyImageView.kf.setImage(with: url)
+        } else {
+            companyImageView.image = UIImage(named: "noImageIcon.png")
+        }
         
         companyNameLabel.alpha = 1
         companyImageView.alpha = 1

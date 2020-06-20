@@ -70,10 +70,14 @@
                                                 <constraint firstItem="mGx-t4-6e0" firstAttribute="leading" secondItem="mVQ-RF-yev" secondAttribute="leading" constant="10" id="wJt-ZQ-Fu1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="companyImageView" destination="xRY-eR-Q88" id="SfU-0o-rvO"/>
+                                            <outlet property="companyNameLabel" destination="mGx-t4-6e0" id="bXA-Zk-VgW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qQw-6z-7ZQ">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qQw-6z-7ZQ">
                                 <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
