@@ -15,9 +15,9 @@ class CompanyTableViewCell: UITableViewCell {
     @IBOutlet var companyImageView: UIImageView!
     
     override func prepareForReuse() {
-      super.prepareForReuse()
-      
-      configure(with: .none)
+        super.prepareForReuse()
+        
+        configure(with: .none)
     }
     
     override func awakeFromNib() {
@@ -26,22 +26,22 @@ class CompanyTableViewCell: UITableViewCell {
     }
     
     func configure(with company: Company?) {
-      if let company = company {
-        companyNameLabel?.text = company.name
-        
-        if let coverImage = company.coverImage {
-            let fixedCoverImageName = coverImage.replacingOccurrences(of: "i.", with: "")
-            let url = URL(string: fixedCoverImageName)
-            companyImageView.kf.setImage(with: url)
+        if let company = company {
+            companyNameLabel?.text = company.name
+            
+            if let coverImage = company.coverImage {
+                let fixedCoverImageName = coverImage.replacingOccurrences(of: "i.", with: "")
+                let url = URL(string: fixedCoverImageName)
+                companyImageView.kf.setImage(with: url)
+            } else {
+                companyImageView.image = UIImage(named: "noImageIcon.png")
+            }
+            
+            companyNameLabel.alpha = 1
+            companyImageView.alpha = 1
         } else {
-            companyImageView.image = UIImage(named: "noImageIcon.png")
+            companyNameLabel.alpha = 0
+            companyImageView.alpha = 0
         }
-        
-        companyNameLabel.alpha = 1
-        companyImageView.alpha = 1
-      } else {
-        companyNameLabel.alpha = 0
-        companyImageView.alpha = 0
-      }
     }
 }

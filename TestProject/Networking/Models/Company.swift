@@ -13,7 +13,7 @@ struct Company: Codable {
     var coverImage: String?
     var id: Int?
     var name: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case address
         case coverImage = "cover_image"

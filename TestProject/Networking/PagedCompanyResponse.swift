@@ -11,5 +11,4 @@ import Foundation
 struct PagedCompanyResponse: Codable {
     let page: String
     let results: [Company]
-    
 }
