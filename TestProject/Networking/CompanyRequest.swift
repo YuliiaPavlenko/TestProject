@@ -9,9 +9,16 @@
 import Foundation
 
 struct CompanyRequest {
-    static let companies: String = "companies"
-
-    static func getDetailsForCompany(_ id: Int) -> String {
-      return companies + "/\(id)"
+    
+    private static let baseURL = "http://127.0.0.1:5000/"
+    static let companies: String = baseURL + "companies"
+    
+    static func getCompaniesForPage(_ page: Int) -> String {
+        return companies + "?page_number=\(page)"
     }
+    
+    static func getDetailsForCompany(_ id: Int) -> String {
+        return companies + "/\(id)"
+    }
+    
 }

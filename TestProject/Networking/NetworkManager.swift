@@ -10,53 +10,69 @@ import Foundation
 
 final class NetworkManager {
     
-    private lazy var baseURL: URL = {
-      return URL(string: "http://127.0.0.1:5000/")!
-    }()
-
     static let shared = NetworkManager()
     let session: URLSession
-
+    
     private init() {
         session = URLSession(configuration: .default)
     }
     
-    private func getData<Data: Decodable>(with url: URL, completion: @escaping ((Data?, DataResponseError?) -> Void)) {
+    func getCompanies(page: Int, completion: @escaping (Result<PagedCompanyResponse, DataResponseError>) -> Void) {
+
+        let url = URL(string: CompanyRequest.getCompaniesForPage(page))!
         
         let task = session.dataTask(with: url, completionHandler: { data, response, error in
-
+            
             if let _ = error {
-                completion(nil, .decoding)
+                completion(.failure(.network))
                 return
             }
-
-            guard let httpResponse = response as? HTTPURLResponse,
-                      httpResponse.hasSuccessStatusCode,
-                  let data = data
-            else {
-                completion(nil, .network)
-                return
+            
+            guard
+                let httpResponse = response as? HTTPURLResponse,
+                httpResponse.hasSuccessStatusCode,
+                let data = data
+                else {
+                    completion(.failure(.decoding))
+                    return
             }
-
+            
             do {
-                let point = try JSONDecoder().decode(Data.self, from: data)
-
-                completion(point, nil)
+                let point = try JSONDecoder().decode(PagedCompanyResponse.self, from: data)
+                
+                completion(.success(point))
             } catch {
-                completion(nil, .decoding)
+                completion(.failure(.decoding))
             }
-
+            
         })
         task.resume()
     }
     
-    func getCompanies(completion: @escaping (([Company]?, DataResponseError?) -> Void)) {
-        let url = baseURL.appendingPathComponent(CompanyRequest.companies)
-        getData(with: url, completion: completion)
-    }
-
-    func getCompanyDetails(companyId: Int, completion: @escaping ((Company?, DataResponseError?) -> Void)) {
-        let url = baseURL.appendingPathComponent(CompanyRequest.getDetailsForCompany(companyId))
-        getData(with: url, completion: completion)
+    func getCompanyDetails(companyId: Int, completion: @escaping (Result<Company, DataResponseError>) -> Void) {
+        let url = URL(string: CompanyRequest.getDetailsForCompany(companyId))!
+        
+        let task = session.dataTask(with: url, completionHandler: { data, response, error in
+            
+            if let _ = error {
+                completion(.failure(.network))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(.decoding))
+                return
+            }
+            
+            do {
+                let point = try JSONDecoder().decode(Company.self, from: data!)
+                
+                completion(.success(point))
+            } catch {
+                completion(.failure(.decoding))
+            }
+            
+        })
+        task.resume()
     }
 }
