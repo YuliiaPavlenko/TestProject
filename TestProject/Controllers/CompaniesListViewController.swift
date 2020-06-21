@@ -25,10 +25,9 @@ class CompaniesListViewController: UIViewController {
         
         indicatorView.startAnimating()
  
-        tableView.dataSource = self
-        tableView.delegate = self
-        
         viewModel = CompaniesViewModel(delegate: self)
+        
+        setupTableView()
         
         viewModel.fetchCompanies()
     }
@@ -39,11 +38,25 @@ class CompaniesListViewController: UIViewController {
     
     // MARK: - Navigation Bar
     func customizeNavigationBar(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = Colors.blue
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: Colors.white, .font: Fonts.navigationTitle!]
         navigationController?.setNavigationBarHidden(false, animated: animated)
         self.tabBarController?.navigationItem.title = viewModel.setNavigationBarTitle()
     }
+    
+    // MARK: - Custom functions
+    private func setupTableView() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.layoutMargins = UIEdgeInsets.zero
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.separatorColor = Colors.separatorColor
+    }
 }
 
+// MARK: - UITableView DataSource
 extension CompaniesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.itemsCount()
@@ -66,9 +79,10 @@ extension CompaniesListViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableView Delegate
 extension CompaniesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -77,6 +91,7 @@ extension CompaniesListViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - CompaniesViewModelDelegate
 extension CompaniesListViewController: CompaniesViewModelDelegate {
     func onFetchCompleted() {
         indicatorView.stopAnimating()

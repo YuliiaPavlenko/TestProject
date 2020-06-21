@@ -27,8 +27,7 @@ class FoundCompaniesViewController: UIViewController {
                 
         indicatorView.startAnimating()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        setupTableView()
         
         viewModel = FoundCompaniesViewModel(delegate: self)
         
@@ -41,8 +40,21 @@ class FoundCompaniesViewController: UIViewController {
     
     // MARK: - Navigation Bar
     func customizeNavigationBar(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = Colors.blue
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: Colors.white, .font: Fonts.navigationTitle!]
         navigationController?.setNavigationBarHidden(false, animated: animated)
         title = viewModel.setNavigationBarTitle()
+    }
+    
+    private func setupTableView() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.layoutMargins = UIEdgeInsets.zero
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.separatorColor = Colors.separatorColor
     }
 }
 
@@ -65,7 +77,7 @@ extension FoundCompaniesViewController: UITableViewDataSource {
 // MARK: - UITableView Delegate
 extension FoundCompaniesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

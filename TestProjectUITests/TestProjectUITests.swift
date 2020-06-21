@@ -28,7 +28,7 @@ class TestProjectUITests: XCTestCase {
         
         let companyTextField = app.textFields["Company"]
         
-        let findCompaniesButton = app.buttons["Find Companies!"]
+        let findCompaniesButton = app.buttons["Find Companies"]
                         
         if !companyTextField.title.isEmpty {
             XCTAssertTrue(findCompaniesButton.isEnabled)

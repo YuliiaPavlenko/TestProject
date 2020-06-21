@@ -14,6 +14,7 @@ class CompanyDetailsViewController: UIViewController {
     @IBOutlet var companyNameLabel: UILabel!
     @IBOutlet var companyDescriptionLabel: UILabel!
     @IBOutlet var companyAddressLabel: UILabel!
+    @IBOutlet var companyCoordinatesLabel: UILabel!
     @IBOutlet var companyImageView: UIImageView!
     @IBOutlet var indicatorView: UIActivityIndicatorView!
     
@@ -25,9 +26,12 @@ class CompanyDetailsViewController: UIViewController {
         
         indicatorView.startAnimating()
         
+        configureUI()
+        
         viewModel = CompanyDetailsViewModel(delegate: self)
         
         viewModel.viewIsPrepared()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +40,23 @@ class CompanyDetailsViewController: UIViewController {
     
     // MARK: - Navigation Bar
     func customizeNavigationBar(_ animated: Bool) {
+        navigationController?.navigationBar.tintColor = .white
         title = viewModel.setNavigationBarTitle()
+    }
+    
+    // MARK: - Custom functions
+    private func configureUI() {
+        companyNameLabel.textColor = Colors.grayTitle
+        companyNameLabel.font = Fonts.title
+        
+        companyDescriptionLabel.textColor = Colors.grayTitle
+        companyDescriptionLabel.font = Fonts.title
+        
+        companyAddressLabel.textColor = Colors.grayTitle
+        companyAddressLabel.font = Fonts.title
+        
+        companyCoordinatesLabel.textColor = Colors.grayTitle
+        companyCoordinatesLabel.font = Fonts.title
     }
 
 }
@@ -54,8 +74,8 @@ extension CompanyDetailsViewController: CompanyDetailsViewModelDelegate {
             
             self.companyNameLabel.text = company.name ?? "No company name"
             self.companyDescriptionLabel.text = company.description ?? "No company description"
-            self.companyAddressLabel.text = (company.address?.city)!
-                //+ company.address?.coordinates?.latitude ?? "" + company.address?.coordinates?.longitude ?? ""
+            self.companyAddressLabel.text = "Company address: \(company.address?.city ?? "No city name")"
+            self.companyCoordinatesLabel.text = "Company coordinates: \(company.address?.coordinates?.latitude ?? ""), \(company.address?.coordinates?.longitude ?? "")"
             
             if let coverImage = company.coverImage {
                 let fixedCoverImageName = coverImage.replacingOccurrences(of: "i.", with: "")
@@ -65,10 +85,5 @@ extension CompanyDetailsViewController: CompanyDetailsViewModelDelegate {
                 self.companyImageView.image = UIImage(named: "noImageIcon.png")
             }
         }
-        
-        
-        
     }
-    
-    
 }

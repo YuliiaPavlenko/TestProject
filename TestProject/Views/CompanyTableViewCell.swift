@@ -22,7 +22,15 @@ class CompanyTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        companyNameLabel.textColor = .darkText
+        configureUI()
+    }
+    
+    private func configureUI() {
+        companyNameLabel.textColor = Colors.grayTitle
+        companyNameLabel.font = Fonts.title
+        
+        companyImageView.layer.cornerRadius = 7.0
+        companyImageView.clipsToBounds = true
     }
     
     func configure(with company: Company?) {
