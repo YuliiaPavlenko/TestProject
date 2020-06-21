@@ -25,9 +25,9 @@ class CompaniesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        indicatorView.isHidden = false
         indicatorView.startAnimating()
-        
+        indicatorView.isHidden = false
+ 
         tableView.dataSource = self
         tableView.delegate = self
         
