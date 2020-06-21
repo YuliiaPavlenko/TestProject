@@ -6,4 +6,97 @@
 //  Copyright © 2020 Yuliia Pavlenko. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class FoundCompaniesViewController: UIViewController {
+    private enum CellIdentifiers {
+        static let list = "CompanyList"
+    }
+    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
+    
+    private var viewModel: FoundCompaniesViewModel!
+    
+    private var shouldShowLoadingCell = false
+    var company: String!
+    
+    // MARK: - View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+                
+        indicatorView.startAnimating()
+        indicatorView.isHidden = false
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        viewModel = FoundCompaniesViewModel(delegate: self)
+        
+        viewModel.fetchCompanies(with: company)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        customizeNavigationBar(animated)
+    }
+    
+    // MARK: - Navigation Bar
+    func customizeNavigationBar(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        title = viewModel.setNavigationBarTitle()
+    }
+}
+
+// MARK: - UITableView DataSource
+extension FoundCompaniesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.companiesCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.list, for: indexPath) as! CompanyTableViewCell
+        
+        cell.configure(with: viewModel.company(at: indexPath.row))
+        
+        return cell
+    }
+}
+
+// MARK: - UITableView Delegate
+extension FoundCompaniesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.companyClicked(indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - FoundCompaniesViewModelDelegate
+extension FoundCompaniesViewController: FoundCompaniesViewModelDelegate {
+    func onFetchCompletedWithNoData() {
+        indicatorView.stopAnimating()
+        indicatorView.isHidden = true
+        Alert.showAlert(on: self, with: "Warning", message: "No data")
+    }
+    
+    func onFetchCompleted() {
+        indicatorView.stopAnimating()
+        indicatorView.isHidden = true
+        tableView.reloadData()
+    }
+    
+    func onFetchFailed(with reason: String) {
+        indicatorView.stopAnimating()
+        indicatorView.isHidden = true
+        Alert.showAlert(on: self, with: "Warning", message: reason)
+    }
+    
+    func showCompanyDetails() {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CompanyDetailsViewController") as? CompanyDetailsViewController
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+}
