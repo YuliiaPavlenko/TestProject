@@ -17,6 +17,10 @@ struct CompanyRequest {
         return companies + "?page_number=\(page)"
     }
     
+    static func getCompaniesForQuery(_ text: String) -> String {
+        return companies + "/search?query=\(text)"
+    }
+    
     static func getDetailsForCompany(_ id: Int) -> String {
         return companies + "/\(id)"
     }
