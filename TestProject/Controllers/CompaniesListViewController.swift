@@ -21,11 +21,12 @@ class CompaniesListViewController: UIViewController {
     
     private var shouldShowLoadingCell = false
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        indicatorView.startAnimating()
         indicatorView.isHidden = false
+        indicatorView.startAnimating()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -36,13 +37,14 @@ class CompaniesListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        customizeNavigationBar(animated)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    // MARK: - Navigation Bar
+    func customizeNavigationBar(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.tabBarController?.navigationItem.title = viewModel.setNavigationBarTitle()
     }
-    
 }
 
 extension CompaniesListViewController: UITableViewDataSource {

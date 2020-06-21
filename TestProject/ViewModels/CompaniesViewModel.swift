@@ -72,4 +72,8 @@ class CompaniesViewModel {
         Cache.shared.setSelectedCompany(companies[atIndex])
         delegate?.showCompanyDetails()
     }
+    
+    func setNavigationBarTitle() -> String {
+        return "Companies"
+    }
 }

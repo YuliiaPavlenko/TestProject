@@ -42,6 +42,7 @@ class CompanyDetailsViewController: UIViewController {
 
 }
 
+// MARK: - CompanyDetailsViewModelDelegate
 extension CompanyDetailsViewController: CompanyDetailsViewModelDelegate {
     func presentAlertOnMainThread(title: String, message: String, buttonTitle: String) {
         Alert.showAlertOnMainThread(on: self, with: title, message: message)
