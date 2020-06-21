@@ -30,7 +30,7 @@ final class ButtonEnablingBehavior: NSObject {
     @objc func textFieldDidChange(_ textField: UITextField) {
         var enable = true
         for textField in textFields {
-            guard let text = textField.text, !text.isEmpty else {
+            guard let text = textField.text, !text.isEmpty, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
                 enable = false
                 break
             }

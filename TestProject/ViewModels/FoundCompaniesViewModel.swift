@@ -9,10 +9,10 @@
 import Foundation
 
 protocol FoundCompaniesViewModelDelegate: class {
-    func onFetchFailed(with reason: String)
+    func onFetchFailed(title: String, message: String)
     func showCompanyDetails()
     func onFetchCompleted()
-    func onFetchCompletedWithNoData()
+    func onFetchCompletedWithNoData(title: String, message: String)
 }
 
 class FoundCompaniesViewModel {
@@ -40,7 +40,7 @@ class FoundCompaniesViewModel {
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.delegate?.onFetchFailed(with: error.reason)
+                    self.delegate?.onFetchFailed(title: "Error", message: error.reason)
                 }
             case .success(let response):
                 DispatchQueue.main.async {
@@ -48,15 +48,13 @@ class FoundCompaniesViewModel {
                     if response.count > 0 {
                         self.delegate?.onFetchCompleted()
                     } else {
-                        self.delegate?.onFetchCompletedWithNoData()
+                        self.delegate?.onFetchCompletedWithNoData(title: "Warning", message: "No data found")
                     }
-                    
-                    
                 }
             }
         }
     }
-
+    
     func companyClicked(_ atIndex: Int) {
         Cache.shared.setSelectedCompany(companies[atIndex])
         delegate?.showCompanyDetails()

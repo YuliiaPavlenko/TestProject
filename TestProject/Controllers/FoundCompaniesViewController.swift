@@ -24,12 +24,12 @@ class FoundCompaniesViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        viewModel = FoundCompaniesViewModel(delegate: self)
+        
         indicatorView.startAnimating()
         
         setupTableView()
-        
-        viewModel = FoundCompaniesViewModel(delegate: self)
         
         viewModel.fetchCompanies(with: company)
     }
@@ -88,19 +88,20 @@ extension FoundCompaniesViewController: UITableViewDelegate {
 
 // MARK: - FoundCompaniesViewModelDelegate
 extension FoundCompaniesViewController: FoundCompaniesViewModelDelegate {
-    func onFetchCompletedWithNoData() {
-        indicatorView.stopAnimating()
-        Alert.showAlert(on: self, with: "Warning", message: "No data")
-    }
-    
+
     func onFetchCompleted() {
         indicatorView.stopAnimating()
         tableView.reloadData()
     }
     
-    func onFetchFailed(with reason: String) {
+    func onFetchCompletedWithNoData(title: String, message: String) {
         indicatorView.stopAnimating()
-        Alert.showAlert(on: self, with: "Warning", message: reason)
+        Alert.showAlert(on: self, with: title, message: message)
+    }
+    
+    func onFetchFailed(title: String, message: String) {
+        indicatorView.stopAnimating()
+        Alert.showAlert(on: self, with: title, message: message)
     }
     
     func showCompanyDetails() {

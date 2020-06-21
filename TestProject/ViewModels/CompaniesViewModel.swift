@@ -9,9 +9,9 @@
 import Foundation
 
 protocol CompaniesViewModelDelegate: class {
-    func onFetchFailed(with reason: String)
-    func showCompanyDetails()
     func onFetchCompleted()
+    func onFetchFailed(title: String, message: String)
+    func showCompanyDetails()
 }
 
 class CompaniesViewModel {
@@ -41,7 +41,7 @@ class CompaniesViewModel {
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.delegate?.onFetchFailed(with: error.reason)
+                    self.delegate?.onFetchFailed(title: "Error", message: error.reason)
                 }
             case .success(let response):
                 DispatchQueue.main.async {

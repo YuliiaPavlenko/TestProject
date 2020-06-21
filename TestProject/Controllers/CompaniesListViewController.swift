@@ -93,14 +93,15 @@ extension CompaniesListViewController: UITableViewDelegate {
 
 // MARK: - CompaniesViewModelDelegate
 extension CompaniesListViewController: CompaniesViewModelDelegate {
+    
     func onFetchCompleted() {
         indicatorView.stopAnimating()
         tableView.reloadData()
     }
     
-    func onFetchFailed(with reason: String) {
+    func onFetchFailed(title: String, message: String) {
         indicatorView.stopAnimating()
-        Alert.showAlert(on: self, with: "Warning", message: reason)
+        Alert.showAlert(on: self, with: title, message: message)
     }
     
     func showCompanyDetails() {

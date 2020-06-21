@@ -53,7 +53,7 @@ class CompaniesSearchViewController: UIViewController {
             }
         }
     }
-    
+
     private func handleTap() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
