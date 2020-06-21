@@ -11,6 +11,7 @@ import UIKit
 class CompaniesListViewController: UIViewController {
     private enum CellIdentifiers {
         static let list = "CompanyList"
+        static let loadingCellIdentifier = "LoadingTableViewCell"
     }
     
     @IBOutlet var tableView: UITableView!
@@ -26,14 +27,12 @@ class CompaniesListViewController: UIViewController {
         indicatorView.startAnimating()
         indicatorView.isHidden = false
         
-        tableView.isHidden = true
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.prefetchDataSource = self
         
         viewModel = CompaniesViewModel(delegate: self)
         
-        viewModel.fetchModerators()
+        viewModel.fetchCompanies()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,17 +47,22 @@ class CompaniesListViewController: UIViewController {
 
 extension CompaniesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.totalCount
+        return viewModel.itemsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if viewModel.shouldLoadNextPages && indexPath.row == (self.viewModel.itemsCount() - 1) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.loadingCellIdentifier, for: indexPath) as! LoadingTableViewCell
+            cell.indicatorView.startAnimating()
+            viewModel.fetchCompanies()
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.list, for: indexPath) as! CompanyTableViewCell
         
-        if isLoadingCell(for: indexPath) {
-            cell.configure(with: .none)
-        } else {
-            cell.configure(with: viewModel.company(at: indexPath.row))
-        }
+        cell.configure(with: viewModel.company(at: indexPath.row))
+        
         return cell
     }
 }
@@ -74,27 +78,11 @@ extension CompaniesListViewController: UITableViewDelegate {
     }
 }
 
-extension CompaniesListViewController: UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        if indexPaths.contains(where: isLoadingCell) {
-            viewModel.fetchModerators()
-        }
-    }
-}
-
 extension CompaniesListViewController: CompaniesViewModelDelegate {
-    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
-        
-        guard let newIndexPathsToReload = newIndexPathsToReload else {
-            indicatorView.stopAnimating()
-            indicatorView.isHidden = true
-            tableView.isHidden = false
-            tableView.reloadData()
-            return
-        }
-       
-        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
-        tableView.reloadRows(at: indexPathsToReload, with: .automatic)
+    func onFetchCompleted() {
+        indicatorView.stopAnimating()
+        indicatorView.isHidden = true
+        tableView.reloadData()
     }
     
     func onFetchFailed(with reason: String) {
@@ -106,18 +94,5 @@ extension CompaniesListViewController: CompaniesViewModelDelegate {
     func showCompanyDetails() {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CompanyDetailsViewController") as? CompanyDetailsViewController
         navigationController?.pushViewController(vc!, animated: true)
-    }
-}
-
-private extension CompaniesListViewController {
-    
-    func isLoadingCell(for indexPath: IndexPath) -> Bool {
-        return indexPath.row >= viewModel.currentCount
-    }
-    
-    func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
-        let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
-        let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
-        return Array(indexPathsIntersection)
     }
 }
