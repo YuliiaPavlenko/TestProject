@@ -11,51 +11,141 @@
         <!--Navigation Controller-->
         <scene sceneID="OJc-fu-KCg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stu-H8-M2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="enP-XH-444" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s08-kH-YX3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="s08-kH-YX3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Wya-d5-f6T" kind="relationship" relationship="rootViewController" id="2b5-NL-Iq1"/>
+                        <segue destination="2A3-eV-i76" kind="relationship" relationship="rootViewController" id="RRo-ZQ-YUe"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="stu-H8-M2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-280" y="45"/>
+            <point key="canvasLocation" x="-742" y="-948"/>
         </scene>
-        <!--Companies List View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="zvM-Tj-EI3">
+            <objects>
+                <tabBarController id="2A3-eV-i76" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="R0e-fx-Xy3"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HA4-62-KSH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="b6Z-XR-Mzb" kind="relationship" relationship="viewControllers" id="Jef-g0-n5z"/>
+                        <segue destination="Wya-d5-f6T" kind="relationship" relationship="viewControllers" id="8Of-R2-yHm"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPe-fm-eEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="-948"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="eY7-r8-te8">
+            <objects>
+                <viewController title="Search" id="b6Z-XR-Mzb" customClass="CompaniesSearchViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XjS-qp-nsl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-aO-6fU">
+                                <rect key="frame" x="112" y="319.5" width="190" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="KID-5I-Vgn"/>
+                                    <constraint firstAttribute="height" constant="40" id="axf-hQ-rfw"/>
+                                </constraints>
+                                <state key="normal" title="Find Companies!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ItW-cE-amS" kind="show" identifier="CompaniesViewController" id="xxf-tw-Kdf"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQr-8b-zwA">
+                                <rect key="frame" x="101" y="269.5" width="212" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LBq-ro-siX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ6-Xg-9cA">
+                                <rect key="frame" x="101" y="229" width="212" height="20.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Find Companies!">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Upg-RJ-SdZ">
+                                <rect key="frame" x="128" y="51" width="158" height="158"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="080-Yq-fBG"/>
+                                    <constraint firstAttribute="width" secondItem="Upg-RJ-SdZ" secondAttribute="height" multiplier="1:1" id="47I-GD-aTH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0Pg-aO-6fU" firstAttribute="centerX" secondItem="MSb-g5-D4U" secondAttribute="centerX" id="7Zo-bM-6gU"/>
+                            <constraint firstItem="qJ6-Xg-9cA" firstAttribute="trailing" secondItem="iQr-8b-zwA" secondAttribute="trailing" id="DAd-W8-JFz"/>
+                            <constraint firstItem="MSb-g5-D4U" firstAttribute="trailing" secondItem="iQr-8b-zwA" secondAttribute="trailing" constant="101" id="GE1-sF-3Su"/>
+                            <constraint firstItem="Upg-RJ-SdZ" firstAttribute="top" secondItem="MSb-g5-D4U" secondAttribute="top" constant="51" id="KOP-qw-7s4"/>
+                            <constraint firstItem="qJ6-Xg-9cA" firstAttribute="top" secondItem="Upg-RJ-SdZ" secondAttribute="bottom" constant="20" id="NOg-VB-ZQW"/>
+                            <constraint firstItem="0Pg-aO-6fU" firstAttribute="top" secondItem="iQr-8b-zwA" secondAttribute="bottom" constant="20" id="SLc-cG-QGV"/>
+                            <constraint firstItem="iQr-8b-zwA" firstAttribute="top" secondItem="qJ6-Xg-9cA" secondAttribute="bottom" constant="20" id="Y5z-p8-zpH"/>
+                            <constraint firstItem="Upg-RJ-SdZ" firstAttribute="centerX" secondItem="MSb-g5-D4U" secondAttribute="centerX" id="bVl-sO-1z5"/>
+                            <constraint firstItem="iQr-8b-zwA" firstAttribute="leading" secondItem="MSb-g5-D4U" secondAttribute="leading" constant="101" id="id5-CL-HFD"/>
+                            <constraint firstItem="qJ6-Xg-9cA" firstAttribute="leading" secondItem="iQr-8b-zwA" secondAttribute="leading" id="ivt-FS-a2x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MSb-g5-D4U"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search Company" image="magnifyingglass" catalog="system" id="TDZ-fX-BSM"/>
+                    <connections>
+                        <outlet property="companyTextField" destination="iQr-8b-zwA" id="ZJY-2S-Rk1"/>
+                        <outlet property="searchButton" destination="0Pg-aO-6fU" id="GWG-a4-pN5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8S0-C5-cRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="-611"/>
+        </scene>
+        <!--All Companies-->
         <scene sceneID="v1n-80-hpr">
             <objects>
                 <viewController id="Wya-d5-f6T" customClass="CompaniesListViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rgb-5S-Gia">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ua5-Tb-8Cu">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Xy-oF-60r">
-                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompanyList" id="Vyp-eM-Nbu" customClass="CompanyTableViewCell" customModule="TestProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="41.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vyp-eM-Nbu" id="mVQ-RF-yev">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGx-t4-6e0">
-                                                    <rect key="frame" x="10" y="10" width="42" height="21.5"/>
+                                                    <rect key="frame" x="10" y="10" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xRY-eR-Q88">
-                                                    <rect key="frame" x="363.5" y="5" width="30.5" height="30.5"/>
+                                                    <rect key="frame" x="364" y="5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="xRY-eR-Q88" secondAttribute="height" multiplier="1:1" id="ikG-me-eVo"/>
                                                     </constraints>
@@ -77,7 +167,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadingTableViewCell" id="kET-1j-fF7" customClass="LoadingTableViewCell" customModule="TestProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="69.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="69" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kET-1j-fF7" id="BBr-1g-r2T">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -99,23 +189,21 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qQw-6z-7ZQ">
-                                <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="344" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8Xy-oF-60r" firstAttribute="trailing" secondItem="qSF-NK-WLH" secondAttribute="trailing" id="GBr-wU-dae"/>
                             <constraint firstItem="qQw-6z-7ZQ" firstAttribute="centerY" secondItem="qSF-NK-WLH" secondAttribute="centerY" id="Hbs-09-5T1"/>
-                            <constraint firstItem="Ua5-Tb-8Cu" firstAttribute="leading" secondItem="qSF-NK-WLH" secondAttribute="leading" id="L7e-fL-dsl"/>
-                            <constraint firstItem="Ua5-Tb-8Cu" firstAttribute="top" secondItem="qSF-NK-WLH" secondAttribute="top" id="MN8-pd-4dH"/>
-                            <constraint firstItem="8Xy-oF-60r" firstAttribute="top" secondItem="Ua5-Tb-8Cu" secondAttribute="bottom" id="Srf-2g-8LA"/>
-                            <constraint firstItem="Ua5-Tb-8Cu" firstAttribute="trailing" secondItem="qSF-NK-WLH" secondAttribute="trailing" id="UFI-vL-eXg"/>
+                            <constraint firstItem="8Xy-oF-60r" firstAttribute="top" secondItem="qSF-NK-WLH" secondAttribute="top" id="VIY-ax-LyY"/>
                             <constraint firstItem="8Xy-oF-60r" firstAttribute="leading" secondItem="qSF-NK-WLH" secondAttribute="leading" id="Zkn-rE-Pep"/>
                             <constraint firstItem="qQw-6z-7ZQ" firstAttribute="centerX" secondItem="qSF-NK-WLH" secondAttribute="centerX" id="i34-n5-D1W"/>
                             <constraint firstAttribute="bottom" secondItem="8Xy-oF-60r" secondAttribute="bottom" id="ryU-F9-8ai"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qSF-NK-WLH"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="All Companies" image="list.dash" catalog="system" id="foo-Nj-zYA"/>
                     <navigationItem key="navigationItem" id="kv8-rg-RhJ"/>
                     <connections>
                         <outlet property="indicatorView" destination="qQw-6z-7ZQ" id="IWA-KK-dVf"/>
@@ -124,9 +212,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3V-8K-tIe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624.63768115942037" y="44.866071428571423"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="-1297.0982142857142"/>
         </scene>
-        <!--Company Details View Controller-->
+        <!--Search Company-->
         <scene sceneID="cCL-yR-99Q">
             <objects>
                 <viewController storyboardIdentifier="CompanyDetailsViewController" id="fuF-Ha-1WY" customClass="CompanyDetailsViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -190,6 +278,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qTD-yQ-lCO"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search Company" id="KTa-Ei-GJQ"/>
                     <connections>
                         <outlet property="companyAddressLabel" destination="1dO-wk-pMI" id="Cgl-7h-JUa"/>
                         <outlet property="companyDescriptionLabel" destination="nmj-qW-8Tb" id="AO6-PO-1t7"/>
@@ -200,7 +289,109 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMP-5h-10I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434.7826086956522" y="44.866071428571423"/>
+            <point key="canvasLocation" x="1899" y="-1297"/>
+        </scene>
+        <!--All Companies-->
+        <scene sceneID="h4E-xe-2Ay">
+            <objects>
+                <viewController id="ItW-cE-amS" customClass="FoundCompaniesViewController" customModule="TestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WlY-lX-1Mw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-k1-caY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompanyList" id="9tg-Bj-yZK" customClass="CompanyTableViewCell" customModule="TestProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="41.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9tg-Bj-yZK" id="kBr-wW-oDr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xz-d6-vNZ">
+                                                    <rect key="frame" x="10" y="10" width="42" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dia-xu-37b">
+                                                    <rect key="frame" x="363.5" y="5" width="30.5" height="30.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Dia-xu-37b" secondAttribute="height" multiplier="1:1" id="9Ib-Ur-iUo"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Dia-xu-37b" secondAttribute="trailing" constant="20" id="7j2-hN-5pS"/>
+                                                <constraint firstItem="0Xz-d6-vNZ" firstAttribute="top" secondItem="kBr-wW-oDr" secondAttribute="top" constant="10" id="Eo8-Bi-NLs"/>
+                                                <constraint firstAttribute="bottom" secondItem="Dia-xu-37b" secondAttribute="bottom" constant="6" id="HDp-zJ-haC"/>
+                                                <constraint firstItem="0Xz-d6-vNZ" firstAttribute="leading" secondItem="kBr-wW-oDr" secondAttribute="leading" constant="10" id="RWr-1i-U8c"/>
+                                                <constraint firstItem="Dia-xu-37b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Xz-d6-vNZ" secondAttribute="trailing" constant="8" symbolic="YES" id="U2U-AQ-n5O"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Xz-d6-vNZ" secondAttribute="bottom" constant="10" id="dzK-jf-bpA"/>
+                                                <constraint firstItem="Dia-xu-37b" firstAttribute="top" secondItem="kBr-wW-oDr" secondAttribute="top" constant="5" id="ili-W4-Gju"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="companyImageView" destination="Dia-xu-37b" id="K6G-yB-jI0"/>
+                                            <outlet property="companyNameLabel" destination="0Xz-d6-vNZ" id="jUV-sm-h9I"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoadingTableViewCell" id="c4C-kz-B77" customClass="LoadingTableViewCell" customModule="TestProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="69.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c4C-kz-B77" id="YL7-Du-Uef">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="vJv-Yb-BTH">
+                                                    <rect key="frame" x="197" y="12" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vJv-Yb-BTH" firstAttribute="centerX" secondItem="YL7-Du-Uef" secondAttribute="centerX" id="J69-5k-sF5"/>
+                                                <constraint firstItem="vJv-Yb-BTH" firstAttribute="centerY" secondItem="YL7-Du-Uef" secondAttribute="centerY" id="sa5-2o-OLB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="indicatorView" destination="vJv-Yb-BTH" id="j5R-R3-ka4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SLl-yc-a1E">
+                                <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rhH-k1-caY" firstAttribute="top" secondItem="fXR-Gi-mdT" secondAttribute="top" id="26j-Bd-WG7"/>
+                            <constraint firstAttribute="bottom" secondItem="rhH-k1-caY" secondAttribute="bottom" id="4F8-OE-cr6"/>
+                            <constraint firstItem="rhH-k1-caY" firstAttribute="leading" secondItem="fXR-Gi-mdT" secondAttribute="leading" id="P7B-J2-tUs"/>
+                            <constraint firstItem="SLl-yc-a1E" firstAttribute="centerX" secondItem="fXR-Gi-mdT" secondAttribute="centerX" id="P8J-IE-dFF"/>
+                            <constraint firstItem="rhH-k1-caY" firstAttribute="trailing" secondItem="fXR-Gi-mdT" secondAttribute="trailing" id="Vt3-yi-2uM"/>
+                            <constraint firstItem="SLl-yc-a1E" firstAttribute="centerY" secondItem="fXR-Gi-mdT" secondAttribute="centerY" id="vCF-NX-X7I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fXR-Gi-mdT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="All Companies" id="v6Y-7F-K0j"/>
+                    <navigationItem key="navigationItem" id="eha-FK-ClX"/>
+                    <connections>
+                        <outlet property="indicatorView" destination="SLl-yc-a1E" id="SiU-lh-4VZ"/>
+                        <outlet property="tableView" destination="rhH-k1-caY" id="Tdc-JQ-cBD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zz9-az-BHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1899" y="-611"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="searchIcon" width="512" height="512"/>
+    </resources>
 </document>
