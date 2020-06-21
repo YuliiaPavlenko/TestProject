@@ -72,10 +72,10 @@ extension CompanyDetailsViewController: CompanyDetailsViewModelDelegate {
         DispatchQueue.main.async {
             self.indicatorView.stopAnimating()
             
-            self.companyNameLabel.text = company.name ?? "No company name"
-            self.companyDescriptionLabel.text = company.description ?? "No company description"
+            self.companyNameLabel.text = "Company name: \(company.name ?? "No company name")"
+            self.companyDescriptionLabel.text = "Company description: \(company.description ?? "No company description")"
             self.companyAddressLabel.text = "Company address: \(company.address?.city ?? "No city name")"
-            self.companyCoordinatesLabel.text = "Company coordinates: \(company.address?.coordinates?.latitude ?? ""), \(company.address?.coordinates?.longitude ?? "")"
+            self.companyCoordinatesLabel.text = "Company coordinates: lat: \(company.address?.coordinates?.latitude ?? ""), long: \(company.address?.coordinates?.longitude ?? "")"
             
             if let coverImage = company.coverImage {
                 let fixedCoverImageName = coverImage.replacingOccurrences(of: "i.", with: "")
