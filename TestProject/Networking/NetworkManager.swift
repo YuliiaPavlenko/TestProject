@@ -49,6 +49,38 @@ final class NetworkManager {
         task.resume()
     }
     
+    func findCompanies(for text: String, completion: @escaping (Result<[Company], DataResponseError>) -> Void) {
+
+        let url = URL(string: CompanyRequest.getCompaniesForQuery(text))!
+        
+        let task = session.dataTask(with: url, completionHandler: { data, response, error in
+            
+            if let _ = error {
+                completion(.failure(.network))
+                return
+            }
+            
+            guard
+                let httpResponse = response as? HTTPURLResponse,
+                httpResponse.hasSuccessStatusCode,
+                let data = data
+                else {
+                    completion(.failure(.decoding))
+                    return
+            }
+            
+            do {
+                let point = try JSONDecoder().decode([Company].self, from: data)
+                
+                completion(.success(point))
+            } catch {
+                completion(.failure(.decoding))
+            }
+            
+        })
+        task.resume()
+    }
+    
     func getCompanyDetails(companyId: Int, completion: @escaping (Result<Company, DataResponseError>) -> Void) {
         let url = URL(string: CompanyRequest.getDetailsForCompany(companyId))!
         
