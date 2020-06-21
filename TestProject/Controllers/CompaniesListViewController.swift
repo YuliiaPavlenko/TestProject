@@ -36,6 +36,14 @@ class CompaniesListViewController: UIViewController {
         viewModel.fetchModerators()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
 }
 
 extension CompaniesListViewController: UITableViewDataSource {
@@ -58,6 +66,11 @@ extension CompaniesListViewController: UITableViewDataSource {
 extension CompaniesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.companyClicked(indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -88,6 +101,11 @@ extension CompaniesListViewController: CompaniesViewModelDelegate {
         indicatorView.stopAnimating()
         indicatorView.isHidden = true
         Alert.showAlert(on: self, with: "Warning", message: reason)
+    }
+    
+    func showCompanyDetails() {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CompanyDetailsViewController") as? CompanyDetailsViewController
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }
 

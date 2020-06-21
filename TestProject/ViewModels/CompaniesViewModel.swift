@@ -11,6 +11,7 @@ import Foundation
 protocol CompaniesViewModelDelegate: class {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
     func onFetchFailed(with reason: String)
+    func showCompanyDetails()
 }
 
 class CompaniesViewModel {
@@ -74,6 +75,11 @@ class CompaniesViewModel {
         let startIndex = companies.count - newCompanies.count
         let endIndex = startIndex + newCompanies.count
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
+    }
+    
+    func companyClicked(_ atIndex: Int) {
+        Cache.shared.setSelectedCompany(companies[atIndex])
+        delegate?.showCompanyDetails()
     }
   
 }
