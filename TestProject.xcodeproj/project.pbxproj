@@ -28,6 +28,7 @@
 		AF9DF903249EA1FB003E116F /* CompanyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF902249EA1FB003E116F /* CompanyDetailsViewController.swift */; };
 		AF9DF905249EA2FC003E116F /* CompanyDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF904249EA2FC003E116F /* CompanyDetailsViewModel.swift */; };
 		AF9DF90A249EB500003E116F /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF909249EB500003E116F /* Cache.swift */; };
+		AF9DF90C249F592C003E116F /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF90B249F592C003E116F /* LoadingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		AF9DF902249EA1FB003E116F /* CompanyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsViewController.swift; sourceTree = "<group>"; };
 		AF9DF904249EA2FC003E116F /* CompanyDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsViewModel.swift; sourceTree = "<group>"; };
 		AF9DF909249EB500003E116F /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		AF9DF90B249F592C003E116F /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		D2E3384B4590536107EC25F1 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		D95BFFDE2A7E03DFA32CADBF /* Pods_TestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -248,6 +250,7 @@
 			children = (
 				AF9DF8B7249CF2ED003E116F /* Main.storyboard */,
 				AF9DF8F8249D2D6F003E116F /* CompanyTableViewCell.swift */,
+				AF9DF90B249F592C003E116F /* LoadingTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				AF9DF8F1249D1867003E116F /* NetworkManager.swift in Sources */,
 				AF9DF8F7249D26BF003E116F /* CompanyRequest.swift in Sources */,
 				AF9DF8B2249CF2ED003E116F /* AppDelegate.swift in Sources */,
+				AF9DF90C249F592C003E116F /* LoadingTableViewCell.swift in Sources */,
 				AF9DF8ED249D1678003E116F /* DataResponseError.swift in Sources */,
 				AF9DF901249E4E8D003E116F /* Alert.swift in Sources */,
 				AF9DF8F3249D1F88003E116F /* Company.swift in Sources */,
