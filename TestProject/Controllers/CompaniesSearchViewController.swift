@@ -21,9 +21,7 @@ class CompaniesSearchViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        view.backgroundColor = .white
-        
+                
         behavior = ButtonEnablingBehavior(textFields: [companyTextField]) { [unowned self] enable in
             if enable {
                 self.searchButton.isEnabled = true

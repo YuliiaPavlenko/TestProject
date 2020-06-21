@@ -26,7 +26,6 @@ class FoundCompaniesViewController: UIViewController {
         super.viewDidLoad()
                 
         indicatorView.startAnimating()
-        indicatorView.isHidden = false
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -79,19 +78,16 @@ extension FoundCompaniesViewController: UITableViewDelegate {
 extension FoundCompaniesViewController: FoundCompaniesViewModelDelegate {
     func onFetchCompletedWithNoData() {
         indicatorView.stopAnimating()
-        indicatorView.isHidden = true
         Alert.showAlert(on: self, with: "Warning", message: "No data")
     }
     
     func onFetchCompleted() {
         indicatorView.stopAnimating()
-        indicatorView.isHidden = true
         tableView.reloadData()
     }
     
     func onFetchFailed(with reason: String) {
         indicatorView.stopAnimating()
-        indicatorView.isHidden = true
         Alert.showAlert(on: self, with: "Warning", message: reason)
     }
     

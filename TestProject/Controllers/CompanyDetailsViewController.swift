@@ -24,7 +24,6 @@ class CompanyDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         indicatorView.startAnimating()
-        indicatorView.isHidden = false
         
         viewModel = CompanyDetailsViewModel(delegate: self)
         
@@ -52,7 +51,6 @@ extension CompanyDetailsViewController: CompanyDetailsViewModelDelegate {
     func showCompanyDetails(for company: Company) {
         DispatchQueue.main.async {
             self.indicatorView.stopAnimating()
-            self.indicatorView.isHidden = true
             
             self.companyNameLabel.text = company.name ?? "No company name"
             self.companyDescriptionLabel.text = company.description ?? "No company description"

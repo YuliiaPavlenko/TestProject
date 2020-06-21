@@ -18,15 +18,12 @@ class CompaniesListViewController: UIViewController {
     @IBOutlet var indicatorView: UIActivityIndicatorView!
     
     private var viewModel: CompaniesViewModel!
-    
-    private var shouldShowLoadingCell = false
-    
+        
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         indicatorView.startAnimating()
-        indicatorView.isHidden = false
  
         tableView.dataSource = self
         tableView.delegate = self
@@ -83,13 +80,11 @@ extension CompaniesListViewController: UITableViewDelegate {
 extension CompaniesListViewController: CompaniesViewModelDelegate {
     func onFetchCompleted() {
         indicatorView.stopAnimating()
-        indicatorView.isHidden = true
         tableView.reloadData()
     }
     
     func onFetchFailed(with reason: String) {
         indicatorView.stopAnimating()
-        indicatorView.isHidden = true
         Alert.showAlert(on: self, with: "Warning", message: reason)
     }
     
