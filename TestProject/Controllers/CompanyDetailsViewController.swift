@@ -78,6 +78,7 @@ extension CompanyDetailsViewController: CompanyDetailsViewModelDelegate {
             self.companyCoordinatesLabel.text = "Company coordinates: lat: \(company.address?.coordinates?.latitude ?? ""), long: \(company.address?.coordinates?.longitude ?? "")"
             
             if let coverImage = company.coverImage {
+                // fixed url from api
                 let fixedCoverImageName = coverImage.replacingOccurrences(of: "i.", with: "")
                 let url = URL(string: fixedCoverImageName)
                 self.companyImageView.kf.setImage(with: url)

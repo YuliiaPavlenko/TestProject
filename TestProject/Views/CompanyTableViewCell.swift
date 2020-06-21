@@ -38,6 +38,7 @@ class CompanyTableViewCell: UITableViewCell {
             companyNameLabel?.text = company.name
             
             if let coverImage = company.coverImage {
+                // fixed url from api
                 let fixedCoverImageName = coverImage.replacingOccurrences(of: "i.", with: "")
                 let url = URL(string: fixedCoverImageName)
                 companyImageView.kf.setImage(with: url)
