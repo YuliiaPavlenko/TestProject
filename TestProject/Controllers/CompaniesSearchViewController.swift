@@ -22,17 +22,11 @@ class CompaniesSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        behavior = ButtonEnablingBehavior(textFields: [companyTextField]) { [unowned self] enable in
-            if enable {
-                self.searchButton.isEnabled = true
-                self.searchButton.alpha = 1
-            } else {
-                self.searchButton.isEnabled = false
-                self.searchButton.alpha = 0.7
-            }
-        }
+        setButtonAppearance()
         
         companyTextField.setBottomBorder()
+        
+        handleTap()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,5 +39,27 @@ class CompaniesSearchViewController: UIViewController {
                 listViewController.company = companyTextField.text!
             }
         }
+    }
+    
+    // MARK: - Custom functions
+    private func setButtonAppearance() {
+        behavior = ButtonEnablingBehavior(textFields: [companyTextField]) { [unowned self] enable in
+            if enable {
+                self.searchButton.isEnabled = true
+                self.searchButton.alpha = 1
+            } else {
+                self.searchButton.isEnabled = false
+                self.searchButton.alpha = 0.7
+            }
+        }
+    }
+    
+    private func handleTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
