@@ -29,6 +29,11 @@
 		AF9DF905249EA2FC003E116F /* CompanyDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF904249EA2FC003E116F /* CompanyDetailsViewModel.swift */; };
 		AF9DF90A249EB500003E116F /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF909249EB500003E116F /* Cache.swift */; };
 		AF9DF90C249F592C003E116F /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF90B249F592C003E116F /* LoadingTableViewCell.swift */; };
+		AF9DF90E249F89DC003E116F /* CompaniesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF90D249F89DC003E116F /* CompaniesSearchViewController.swift */; };
+		AF9DF910249F8A37003E116F /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF90F249F8A37003E116F /* UITextField+Extensions.swift */; };
+		AF9DF913249F8A97003E116F /* ButtonEnablingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF912249F8A97003E116F /* ButtonEnablingBehavior.swift */; };
+		AF9DF915249F8F48003E116F /* FoundCompaniesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF914249F8F48003E116F /* FoundCompaniesViewController.swift */; };
+		AF9DF917249F8FDA003E116F /* FoundCompaniesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF916249F8FDA003E116F /* FoundCompaniesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,11 @@
 		AF9DF904249EA2FC003E116F /* CompanyDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsViewModel.swift; sourceTree = "<group>"; };
 		AF9DF909249EB500003E116F /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		AF9DF90B249F592C003E116F /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		AF9DF90D249F89DC003E116F /* CompaniesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesSearchViewController.swift; sourceTree = "<group>"; };
+		AF9DF90F249F8A37003E116F /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		AF9DF912249F8A97003E116F /* ButtonEnablingBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEnablingBehavior.swift; sourceTree = "<group>"; };
+		AF9DF914249F8F48003E116F /* FoundCompaniesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundCompaniesViewController.swift; sourceTree = "<group>"; };
+		AF9DF916249F8FDA003E116F /* FoundCompaniesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundCompaniesViewModel.swift; sourceTree = "<group>"; };
 		D2E3384B4590536107EC25F1 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		D95BFFDE2A7E03DFA32CADBF /* Pods_TestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -143,6 +153,7 @@
 			children = (
 				AF9DF8B1249CF2ED003E116F /* AppDelegate.swift */,
 				AF9DF8BC249CF2F2003E116F /* LaunchScreen.storyboard */,
+				AF9DF911249F8A8A003E116F /* Behavior */,
 				AF9DF906249EB4DA003E116F /* Cache */,
 				AF9DF8E3249CFC0C003E116F /* Constants */,
 				AF9DF8E6249CFD57003E116F /* Controllers */,
@@ -186,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				AF9DF900249E4E8D003E116F /* Alert.swift */,
+				AF9DF90F249F8A37003E116F /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +214,8 @@
 			children = (
 				AF9DF8FA249E12CB003E116F /* CompaniesListViewController.swift */,
 				AF9DF902249EA1FB003E116F /* CompanyDetailsViewController.swift */,
+				AF9DF90D249F89DC003E116F /* CompaniesSearchViewController.swift */,
+				AF9DF914249F8F48003E116F /* FoundCompaniesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +255,7 @@
 			children = (
 				AF9DF8FC249E13BE003E116F /* CompaniesViewModel.swift */,
 				AF9DF904249EA2FC003E116F /* CompanyDetailsViewModel.swift */,
+				AF9DF916249F8FDA003E116F /* FoundCompaniesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -261,6 +276,14 @@
 				AF9DF909249EB500003E116F /* Cache.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		AF9DF911249F8A8A003E116F /* Behavior */ = {
+			isa = PBXGroup;
+			children = (
+				AF9DF912249F8A97003E116F /* ButtonEnablingBehavior.swift */,
+			);
+			path = Behavior;
 			sourceTree = "<group>";
 		};
 		C21102D5B184F8995BCBE6ED /* Frameworks */ = {
@@ -447,11 +470,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9DF8FD249E13BE003E116F /* CompaniesViewModel.swift in Sources */,
+				AF9DF90E249F89DC003E116F /* CompaniesSearchViewController.swift in Sources */,
 				AF9DF90A249EB500003E116F /* Cache.swift in Sources */,
+				AF9DF915249F8F48003E116F /* FoundCompaniesViewController.swift in Sources */,
 				AF9DF8F5249D1F94003E116F /* Address.swift in Sources */,
 				AF9DF8F1249D1867003E116F /* NetworkManager.swift in Sources */,
 				AF9DF8F7249D26BF003E116F /* CompanyRequest.swift in Sources */,
 				AF9DF8B2249CF2ED003E116F /* AppDelegate.swift in Sources */,
+				AF9DF913249F8A97003E116F /* ButtonEnablingBehavior.swift in Sources */,
+				AF9DF917249F8FDA003E116F /* FoundCompaniesViewModel.swift in Sources */,
 				AF9DF90C249F592C003E116F /* LoadingTableViewCell.swift in Sources */,
 				AF9DF8ED249D1678003E116F /* DataResponseError.swift in Sources */,
 				AF9DF901249E4E8D003E116F /* Alert.swift in Sources */,
@@ -460,6 +487,7 @@
 				AF9DF8EF249D174D003E116F /* HTTPURLResponse.swift in Sources */,
 				AF9DF903249EA1FB003E116F /* CompanyDetailsViewController.swift in Sources */,
 				AF9DF8FB249E12CB003E116F /* CompaniesListViewController.swift in Sources */,
+				AF9DF910249F8A37003E116F /* UITextField+Extensions.swift in Sources */,
 				AF9DF8F9249D2D6F003E116F /* CompanyTableViewCell.swift in Sources */,
 				AF9DF905249EA2FC003E116F /* CompanyDetailsViewModel.swift in Sources */,
 			);
