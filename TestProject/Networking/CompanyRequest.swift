@@ -11,6 +11,7 @@ import Foundation
 struct CompanyRequest {
     
     private static let baseURL = "http://127.0.0.1:5000/"
+    
     static let companies: String = baseURL + "companies"
     
     static func getCompaniesForPage(_ page: Int) -> String {

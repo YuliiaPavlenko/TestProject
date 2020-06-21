@@ -91,13 +91,17 @@ final class NetworkManager {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completion(.failure(.decoding))
-                return
+            guard
+                let httpResponse = response as? HTTPURLResponse,
+                httpResponse.hasSuccessStatusCode,
+                let data = data
+                else {
+                    completion(.failure(.decoding))
+                    return
             }
             
             do {
-                let point = try JSONDecoder().decode(Company.self, from: data!)
+                let point = try JSONDecoder().decode(Company.self, from: data)
                 
                 completion(.success(point))
             } catch {

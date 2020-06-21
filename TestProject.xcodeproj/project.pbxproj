@@ -208,7 +208,6 @@
 		AF9DF8E2249CFC00003E116F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AF9DF900249E4E8D003E116F /* Alert.swift */,
 				AF9DF90F249F8A37003E116F /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
@@ -217,6 +216,7 @@
 		AF9DF8E3249CFC0C003E116F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				AF9DF900249E4E8D003E116F /* Alert.swift */,
 				AF9DF91C249FF350003E116F /* Colors.swift */,
 				AF9DF91E249FF3BB003E116F /* Fonts.swift */,
 			);
