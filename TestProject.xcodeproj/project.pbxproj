@@ -12,7 +12,6 @@
 		AF9DF8B9249CF2ED003E116F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9DF8B7249CF2ED003E116F /* Main.storyboard */; };
 		AF9DF8BB249CF2F2003E116F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9DF8BA249CF2F2003E116F /* Assets.xcassets */; };
 		AF9DF8BE249CF2F2003E116F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9DF8BC249CF2F2003E116F /* LaunchScreen.storyboard */; };
-		AF9DF8C9249CF2F2003E116F /* TestProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8C8249CF2F2003E116F /* TestProjectTests.swift */; };
 		AF9DF8D4249CF2F2003E116F /* TestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8D3249CF2F2003E116F /* TestProjectUITests.swift */; };
 		AF9DF8ED249D1678003E116F /* DataResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8EC249D1678003E116F /* DataResponseError.swift */; };
 		AF9DF8EF249D174D003E116F /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8EE249D174D003E116F /* HTTPURLResponse.swift */; };
@@ -64,7 +63,6 @@
 		AF9DF8BD249CF2F2003E116F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF9DF8BF249CF2F2003E116F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF9DF8C4249CF2F2003E116F /* TestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF9DF8C8249CF2F2003E116F /* TestProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectTests.swift; sourceTree = "<group>"; };
 		AF9DF8CA249CF2F2003E116F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF9DF8CF249CF2F2003E116F /* TestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9DF8D3249CF2F2003E116F /* TestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectUITests.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 		AF9DF8C7249CF2F2003E116F /* TestProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF9DF8C8249CF2F2003E116F /* TestProjectTests.swift */,
 				AF9DF91A249FDDE4003E116F /* CompanyDetailsPropertiesTests.swift */,
 				AF9DF918249FDA9D003E116F /* CompaniesSearchPropertiesTests.swift */,
 				AF9DF8CA249CF2F2003E116F /* Info.plist */,
@@ -505,7 +502,6 @@
 			files = (
 				AF9DF91B249FDDE4003E116F /* CompanyDetailsPropertiesTests.swift in Sources */,
 				AF9DF919249FDA9D003E116F /* CompaniesSearchPropertiesTests.swift in Sources */,
-				AF9DF8C9249CF2F2003E116F /* TestProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
