@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		43CBF136BF06E3F9B2A7D0BF /* Pods_TestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95BFFDE2A7E03DFA32CADBF /* Pods_TestProject.framework */; };
+		AF850CAD24A4C3D3006A202D /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF850CAB24A4C3D3006A202D /* Raleway-Regular.ttf */; };
+		AF850CAE24A4C3D3006A202D /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF850CAC24A4C3D3006A202D /* Raleway-SemiBold.ttf */; };
 		AF9DF8B2249CF2ED003E116F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF8B1249CF2ED003E116F /* AppDelegate.swift */; };
 		AF9DF8B9249CF2ED003E116F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9DF8B7249CF2ED003E116F /* Main.storyboard */; };
 		AF9DF8BB249CF2F2003E116F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9DF8BA249CF2F2003E116F /* Assets.xcassets */; };
@@ -37,8 +39,6 @@
 		AF9DF91B249FDDE4003E116F /* CompanyDetailsPropertiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF91A249FDDE4003E116F /* CompanyDetailsPropertiesTests.swift */; };
 		AF9DF91D249FF350003E116F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF91C249FF350003E116F /* Colors.swift */; };
 		AF9DF91F249FF3BB003E116F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9DF91E249FF3BB003E116F /* Fonts.swift */; };
-		AF9DF923249FF4D1003E116F /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF9DF921249FF4D1003E116F /* Raleway-SemiBold.ttf */; };
-		AF9DF924249FF4D1003E116F /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF9DF922249FF4D1003E116F /* Raleway-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		AF3DF6369589DEDF59F836D3 /* Pods-TestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.debug.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.debug.xcconfig"; sourceTree = "<group>"; };
+		AF850CAB24A4C3D3006A202D /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		AF850CAC24A4C3D3006A202D /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		AF9DF8AE249CF2ED003E116F /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9DF8B1249CF2ED003E116F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9DF8B8249CF2ED003E116F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,8 +97,6 @@
 		AF9DF91A249FDDE4003E116F /* CompanyDetailsPropertiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsPropertiesTests.swift; sourceTree = "<group>"; };
 		AF9DF91C249FF350003E116F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		AF9DF91E249FF3BB003E116F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		AF9DF921249FF4D1003E116F /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-SemiBold.ttf"; path = "../../../../../Desktop/raleway/Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
-		AF9DF922249FF4D1003E116F /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "../../../../../Desktop/raleway/Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		D2E3384B4590536107EC25F1 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		D95BFFDE2A7E03DFA32CADBF /* Pods_TestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -303,8 +303,8 @@
 		AF9DF920249FF4AA003E116F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				AF9DF922249FF4D1003E116F /* Raleway-Regular.ttf */,
-				AF9DF921249FF4D1003E116F /* Raleway-SemiBold.ttf */,
+				AF850CAB24A4C3D3006A202D /* Raleway-Regular.ttf */,
+				AF850CAC24A4C3D3006A202D /* Raleway-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -424,10 +424,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9DF8BE249CF2F2003E116F /* LaunchScreen.storyboard in Resources */,
-				AF9DF924249FF4D1003E116F /* Raleway-Regular.ttf in Resources */,
-				AF9DF923249FF4D1003E116F /* Raleway-SemiBold.ttf in Resources */,
 				AF9DF8BB249CF2F2003E116F /* Assets.xcassets in Resources */,
 				AF9DF8B9249CF2ED003E116F /* Main.storyboard in Resources */,
+				AF850CAD24A4C3D3006A202D /* Raleway-Regular.ttf in Resources */,
+				AF850CAE24A4C3D3006A202D /* Raleway-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
